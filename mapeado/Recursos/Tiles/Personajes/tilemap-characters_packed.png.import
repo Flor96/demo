@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtixqopd6gwwp"
-path="res://.godot/imported/world_tileset.png-d514a9e626e656b5d2a4b16770663ace.ctex"
+uid="uid://e8voqrfdpo3a"
+path="res://.godot/imported/tilemap-characters_packed.png-07c81e3430c15ba7daad5cfbdf9a1a38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world_tileset.png"
-dest_files=["res://.godot/imported/world_tileset.png-d514a9e626e656b5d2a4b16770663ace.ctex"]
+source_file="res://Recursos/Tiles/Personajes/tilemap-characters_packed.png"
+dest_files=["res://.godot/imported/tilemap-characters_packed.png-07c81e3430c15ba7daad5cfbdf9a1a38.ctex"]
 
 [params]
 

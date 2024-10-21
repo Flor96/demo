@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbe45sdewv0nw"]
+
+[ext_resource type="Script" path="res://boton.gd" id="1_2dc57"]
+[ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://kenny.tres" id="1_4r58w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6duke"]
+size = Vector2(16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pg3j"]
+size = Vector2(18, 13)
+
+[node name="Boton" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_2dc57")
+
+[node name="Pressed" type="TileMapLayer" parent="."]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 7, 0, 0, 0)
+tile_set = ExtResource("1_4r58w")
+
+[node name="Released" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 7, 0, 0, 0)
+tile_set = ExtResource("1_4r58w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 14)
+shape = SubResource("RectangleShape2D_6duke")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9, 13.5)
+shape = SubResource("RectangleShape2D_2pg3j")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

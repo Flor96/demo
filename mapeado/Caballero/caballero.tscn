@@ -283,7 +283,7 @@ size = Vector2(7, 11.5)
 scale = Vector2(2, 2)
 script = ExtResource("1_1xlc8")
 move_speed = 100.0
-jump_speed = 300.0
+jump_speed = 350.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

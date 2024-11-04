@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=4 uid="uid://dwm6wv7pk404k"]
 
-[ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://kenny.tres" id="2_2w5wn"]
-[ext_resource type="Texture2D" uid="uid://dpph750i752hb" path="res://tilemap-backgrounds_packed.png" id="3_0tugg"]
-[ext_resource type="Texture2D" uid="uid://dpuhitpdishtc" path="res://tilemap-backgrounds.png" id="4_pjsv6"]
+[ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://Recursos/Tiles/Terreno/kenny.tres" id="2_2w5wn"]
+[ext_resource type="Texture2D" uid="uid://dpph750i752hb" path="res://Recursos/Tiles/Terreno/tilemap-backgrounds_packed.png" id="3_0tugg"]
+[ext_resource type="Texture2D" uid="uid://dpuhitpdishtc" path="res://Recursos/Tiles/Terreno/tilemap-backgrounds.png" id="4_pjsv6"]
 [ext_resource type="PackedScene" uid="uid://dbe45sdewv0nw" path="res://boton.tscn" id="5_sk38c"]
 [ext_resource type="PackedScene" uid="uid://cge7iopl00spg" path="res://Caballero/caballero.tscn" id="6_07npc"]
 [ext_resource type="PackedScene" uid="uid://bc6ef1vknj25o" path="res://puerta.tscn" id="6_tle0d"]
@@ -146,6 +146,7 @@ position = Vector2(162, 127)
 
 [node name="Caballero" parent="." instance=ExtResource("6_07npc")]
 position = Vector2(60, 186)
+jump_speed = 350.0
 
 [node name="Pinchos" parent="." instance=ExtResource("7_owjuq")]
 position = Vector2(90, 154)

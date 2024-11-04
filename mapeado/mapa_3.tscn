@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://kenny.tres" id="1_okarl"]
 [ext_resource type="TileSet" uid="uid://ts18d4r2xkow" path="res://fondo.tres" id="2_8v8t5"]
-[ext_resource type="PackedScene" uid="uid://dx4v6hm4yauy2" path="res://Caballero.tscn" id="3_2w7dy"]
+[ext_resource type="PackedScene" path="res://Caballero.tscn" id="3_2w7dy"]
 
 [node name="mapa 3" type="Node2D"]
 

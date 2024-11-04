@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cge7iopl00spg" path="res://Caballero/caballero.tscn" id="6_07npc"]
 [ext_resource type="PackedScene" uid="uid://bc6ef1vknj25o" path="res://puerta.tscn" id="6_tle0d"]
 [ext_resource type="PackedScene" uid="uid://mc2bypg2bp51" path="res://pinchos/pinchos.tscn" id="7_owjuq"]
+[ext_resource type="PackedScene" uid="uid://dldxqxb1isun" path="res://suelo.tscn" id="8_n8dwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kvhl"]
 texture = ExtResource("3_0tugg")
@@ -118,9 +119,6 @@ texture_region_size = Vector2i(22, 22)
 sources/0 = SubResource("TileSetAtlasSource_1kvhl")
 sources/1 = SubResource("TileSetAtlasSource_aru7h")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_axwfv"]
-size = Vector2(74.25, 8.75)
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Dirt" type="TileMapLayer" parent="."]
@@ -147,15 +145,12 @@ position = Vector2(101, 217)
 position = Vector2(162, 127)
 
 [node name="Caballero" parent="." instance=ExtResource("6_07npc")]
-position = Vector2(314, 197)
+position = Vector2(60, 186)
 
 [node name="Pinchos" parent="." instance=ExtResource("7_owjuq")]
-position = Vector2(241, 185)
+position = Vector2(90, 154)
 scale = Vector2(4, 4)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(261.5, 252.5)
-scale = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_axwfv")
+[node name="Suelo" parent="." instance=ExtResource("8_n8dwk")]
 
 [connection signal="boton_pressed" from="Boton" to="Puerta" method="_on_boton_boton_pressed"]

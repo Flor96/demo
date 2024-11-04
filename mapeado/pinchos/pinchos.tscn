@@ -1,34 +1,39 @@
 [gd_scene load_steps=5 format=3 uid="uid://mc2bypg2bp51"]
 
 [ext_resource type="Script" path="res://pinchos/pinchos.gd" id="1_ak8xm"]
-[ext_resource type="Texture2D" uid="uid://rayila1qruqk" path="res://pinchos/slime_green.png" id="2_iha30"]
+[ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://kenny.tres" id="2_bol5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k53pq"]
-size = Vector2(14, 15)
+size = Vector2(8.5, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvm2"]
-size = Vector2(14, 15)
+size = Vector2(9.5, 4.5)
 
-[node name="Pinchos" type="CharacterBody2D"]
+[node name="Pinchos" type="CharacterBody2D" groups=["Pinchos"]]
+position = Vector2(-2, -10)
 scale = Vector2(2, 2)
 script = ExtResource("1_ak8xm")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="TileMapLayer" parent="."]
 texture_filter = 1
-texture = ExtResource("2_iha30")
-hframes = 4
-vframes = 3
-frame = 6
+position = Vector2(1, 4)
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 8, 0, 3, 0, 0, 0)
+tile_set = ExtResource("2_bol5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(4.75, 7)
+rotation = 3.14159
 shape = SubResource("RectangleShape2D_k53pq")
+one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["Pinchos"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 4.5)
+position = Vector2(4.75, 6.75)
+rotation = 3.14159
 shape = SubResource("RectangleShape2D_kmvm2")
+one_way_collision = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

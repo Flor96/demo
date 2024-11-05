@@ -13,13 +13,13 @@ func _process(delta: float) -> void:
 	$Released.visible = !pressed
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("Caballero"):
 		pressed = true
 		boton_pressed.emit(pressed)
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
-	if area.is_in_group("player"):
+	if area.is_in_group("Caballero"):
 		pressed = false
 		boton_pressed.emit(pressed)
 

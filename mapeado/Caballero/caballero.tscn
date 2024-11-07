@@ -1,29 +1,13 @@
-[gd_scene load_steps=43 format=3 uid="uid://cge7iopl00spg"]
+[gd_scene load_steps=39 format=3 uid="uid://cge7iopl00spg"]
 
 [ext_resource type="Script" path="res://Caballero/caballero.gd" id="1_1xlc8"]
 [ext_resource type="Texture2D" uid="uid://wwica484nltc" path="res://Caballero/knight.png" id="2_baq0g"]
 [ext_resource type="AudioStream" uid="uid://cddbhrggfp003" path="res://Caballero/jump.wav" id="3_7t0d2"]
 [ext_resource type="AudioStream" uid="uid://8v4xshpmhryo" path="res://Caballero/hurt.wav" id="3_nbk8t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ceoxt"]
-atlas = ExtResource("2_baq0g")
-region = Rect2(0, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjtrh"]
-atlas = ExtResource("2_baq0g")
-region = Rect2(32, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ep4e"]
-atlas = ExtResource("2_baq0g")
-region = Rect2(64, 192, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_nl3r8"]
 atlas = ExtResource("2_baq0g")
 region = Rect2(96, 192, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8in2"]
-atlas = ExtResource("2_baq0g")
-region = Rect2(0, 224, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eolcq"]
 atlas = ExtResource("2_baq0g")
@@ -149,19 +133,7 @@ region = Rect2(224, 96, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ceoxt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wjtrh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ep4e")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_nl3r8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n8in2")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eolcq")
@@ -291,6 +263,8 @@ texture_filter = 1
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_uuktm")
 animation = &"dead"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 1)
@@ -309,3 +283,4 @@ stream = ExtResource("3_nbk8t")
 stream = ExtResource("3_7t0d2")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

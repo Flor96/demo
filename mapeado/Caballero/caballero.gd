@@ -6,12 +6,15 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var jump_sound = $JumpSound
 @onready var death_sound = $DeathSound
+@onready var respawn_point = get_parent().get_node("RespawnPoint").global_position
 
 var is_dead = false
 var is_facing_right = true
 var gravity =  ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
+	if is_dead:
+		return
 	jump(delta)
 	move_x()
 	flip()
@@ -19,6 +22,9 @@ func _physics_process(delta):
 	update_animations()
 
 func update_animations():
+	if is_dead:
+		return
+
 	if not is_on_floor():
 		if velocity.y < 0:
 			$AnimatedSprite2D.play("jump")
@@ -46,9 +52,19 @@ func move_x():
 	velocity.x =input_axis * move_speed
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("si funciona")
 	if area.is_in_group("Pinchos") or area.is_in_group("PinchoRojo"):
-		death_sound.play()
-		await get_tree().create_timer(0.5).timeout
-		queue_free()
+		die()
+
+func die():
+	is_dead = true
+	death_sound.play()
+	$AnimatedSprite2D.play("dead")
+	await get_tree().create_timer(0.5).timeout
+	respawn()
+
+func respawn():
+	global_position = respawn_point
+	is_dead = false
+	velocity = Vector2.ZERO
+	update_animations()
 	pass

@@ -154,4 +154,7 @@ scale = Vector2(4, 4)
 [node name="Suelo" parent="." instance=ExtResource("8_n8dwk")]
 visible = false
 
+[node name="RespawnPoint" type="Marker2D" parent="."]
+position = Vector2(18, 218)
+
 [connection signal="boton_pressed" from="Boton" to="Puerta" method="_on_boton_boton_pressed"]

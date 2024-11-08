@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0qfjjcga0pk3"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_ntkkq"]
+[ext_resource type="Texture2D" uid="uid://b60ba7lutquq3" path="res://Recursos/cora.png" id="2_ck14d"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("1_ntkkq")
+
+[node name="Vidas" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.829
+anchor_top = 0.022
+anchor_right = 1.0
+anchor_bottom = 0.1
+offset_left = -20.92
+offset_top = 4.06
+offset_right = 3505.0
+offset_bottom = 1183.0
+grow_horizontal = 0
+scale = Vector2(0.02, 0.02)
+size_flags_horizontal = 4
+
+[node name="Vida1" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+texture = ExtResource("2_ck14d")
+
+[node name="Vida2" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+texture = ExtResource("2_ck14d")
+
+[node name="Vida3" type="TextureRect" parent="Vidas"]
+layout_mode = 2
+texture = ExtResource("2_ck14d")

@@ -59,17 +59,12 @@ func die():
 	is_dead = true
 	death_sound.play()
 	$AnimatedSprite2D.play("dead")
+	Ui.vidas_caballero -= 1
 	await get_tree().create_timer(0.5).timeout
+	update_animations()
 	respawn()
 
 func respawn():
 	global_position = respawn_point
 	is_dead = false
 	velocity = Vector2.ZERO
-	update_animations()
-	Ui.vidas_caballero -= 1
-	print(Ui.vidas_caballero)
-	death_sound.play()
-	await get_tree().create_timer(0.3).timeout
-	queue_free()
-	pass

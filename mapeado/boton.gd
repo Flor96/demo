@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends StaticBody2D
 
 var pressed = false
 signal boton_pressed(valor)
@@ -22,12 +22,9 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Caballero"):
 		pressed = false
 		boton_pressed.emit(pressed)
+		
 
-#Pruebas para hacer con el mouse mientras no existe jugador
-func _on_area_2d_mouse_entered() -> void:
-	pressed = true
-	boton_pressed.emit(pressed)
-
-func _on_area_2d_mouse_exited() -> void:
-	pressed = false
-	boton_pressed.emit(pressed)
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Pinchos"):
+		pressed = true
+		boton_pressed.emit(pressed)

@@ -67,4 +67,9 @@ func respawn():
 	is_dead = false
 	velocity = Vector2.ZERO
 	update_animations()
+	Ui.vidas_caballero -= 1
+	print(Ui.vidas_caballero)
+	death_sound.play()
+	await get_tree().create_timer(0.3).timeout
+	queue_free()
 	pass

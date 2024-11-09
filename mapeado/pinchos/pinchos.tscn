@@ -4,10 +4,10 @@
 [ext_resource type="TileSet" uid="uid://cttwh8h4pog1x" path="res://Recursos/Tiles/Terreno/kenny.tres" id="2_bol5o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k53pq"]
-size = Vector2(8.5, 6)
+size = Vector2(8.5, 5.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kmvm2"]
-size = Vector2(9.5, 4.5)
+size = Vector2(7.5, 3.5)
 
 [node name="Pinchos" type="CharacterBody2D" groups=["Pinchos"]]
 position = Vector2(-2, -10)
@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 3, 0, 0, 0, 1, 0, 
 tile_set = ExtResource("2_bol5o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.75, 8.5)
+position = Vector2(4.75, 8.25)
 rotation = 3.14159
 shape = SubResource("RectangleShape2D_k53pq")
 one_way_collision = true
@@ -31,9 +31,8 @@ one_way_collision = true
 [node name="Area2D" type="Area2D" parent="." groups=["Pinchos"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4.75, 6.75)
+position = Vector2(4.74999, 6.25)
 rotation = 3.14159
 shape = SubResource("RectangleShape2D_kmvm2")
-one_way_collision = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

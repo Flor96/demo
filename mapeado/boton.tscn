@@ -9,8 +9,7 @@ size = Vector2(12, 6)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pg3j"]
 size = Vector2(14, 7)
 
-[node name="Boton" type="RigidBody2D"]
-gravity_scale = 0.0
+[node name="Boton" type="StaticBody2D"]
 script = ExtResource("1_2dc57")
 
 [node name="Pressed" type="TileMapLayer" parent="."]
@@ -34,5 +33,4 @@ shape = SubResource("RectangleShape2D_2pg3j")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
